@@ -1,30 +1,35 @@
+@import "../../Styles/Mixins.scss";
+
 .face-direction {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 40px;
+  display: none;
 
-  &__img-wrapper {
-    width: 200px;
-    height: 225px;
-    // border-radius: 50%;
-    overflow: hidden;
-    // border: 2px solid #ccc;
+  @include respond-to("tablet") {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background: #eee;
-  }
 
-  &__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+    &__img-wrapper {
+      width: 200px;
+      height: 225px;
+      // border-radius: 50%;
+      overflow: hidden;
+      // border: 2px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #eee;
+    }
 
-  &__text {
-    margin-top: 16px;
-    font-size: 1rem;
-    color: #444;
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__text {
+      margin-top: 16px;
+      font-size: 1rem;
+      color: #444;
+    }
   }
 }

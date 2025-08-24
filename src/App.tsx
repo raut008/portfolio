@@ -1,11 +1,11 @@
 import styles from "./App.module.scss";
-import FaceDirection from "./Components/FaceDirection";
 import Header from "./Components/Header";
+import Introduction from "./Components/Introduction";
 function App() {
   return (
     <div className={styles["app"]}>
       <Header />
-      <FaceDirection />
+      <Introduction />
     </div>
   );
 }

@@ -1,0 +1,8 @@
+@import "./Styles/Mixins.scss";
+
+.app {
+  @include respond-to("tablet") {
+    max-width: 75vw;
+    margin: 0 auto;
+  }
+}

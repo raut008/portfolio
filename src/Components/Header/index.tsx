@@ -13,10 +13,13 @@ const Header = () => {
         <Icon type="menu" />
       </div>
       <div className={styles["header__nav"]}>
-        <a href="#about" className={styles["header__nav-link"]}>
-          About
+        <a href="#about-me" className={styles["header__nav-link"]}>
+          About Me
         </a>
-        <a href="#dashboard" className={styles["header__nav-link"]}>
+        <a href="#experience" className={styles["header__nav-link"]}>
+          Experience
+        </a>
+        <a href="#projects" className={styles["header__nav-link"]}>
           Projects
         </a>
         <a

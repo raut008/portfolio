@@ -1,0 +1,152 @@
+import React from "react";
+import styles from "../styles/timeline.module.scss";
+
+const timelineSteps = [
+  {
+    label: "Tata Consultancy Services",
+    date: "17 July 2019 - 7 December - 2021",
+    description: [
+      "Focused on front-end development using React, building responsive and accessible user interfaces for banking applications.",
+      "Participated in deployment processes, ensuring smooth delivery and release of features in a secure environment.",
+      "Collaborated closely with cross-functional teams to align UI features with business and compliance requirements.",
+    ],
+  },
+  {
+    label: "Jio Platforms",
+    date: "8 December 2021 - Present",
+    description: [
+      "Developed and maintained web applications using Angular, React, and Next.js, leveraging both CSR and SSR approaches for performance and SEO optimization.",
+      "Implemented SEO best practices across applications to improve discoverability and user engagement.",
+      "Built and deployed smart TV applications for Tizen, webOS, and VIDAA platforms, ensuring high performance and a seamless user experience across devices.",
+      "Containerized applications using Docker for consistency across development, testing, and production environments.",
+      "Automated CI/CD workflows with Azure Pipelines, enabling faster and more reliable deployments.",
+      "Recently explored working with Large Language Models (LLMs) for integrating AI-driven features and improving product capabilities.",
+      "Gained hands-on experience with MongoDB for data modeling, querying, and supporting scalable backend services.",
+    ],
+  },
+];
+
+const Timeline = () => (
+  <div className={styles["timeline-container"]}>
+    <ul className={styles["timeline-list"]}>
+      {timelineSteps.map((step, idx) => (
+        <li
+          key={step.label}
+          className={`${styles["timeline-item"]} ${step.completed ? styles.completed : ""} ${
+            idx === timelineSteps.length - 1 ? styles.last : ""
+          }`}
+        >
+          <div className={styles["timeline-dot"]}></div>
+          <div className={styles["timeline-content"]}>
+            <div className={styles["timeline-label"]}>{step.label}</div>
+            <div className={styles["timeline-date"]}>{step.date}</div>
+            {Array.isArray(step.description) ? (
+              <ul className={styles["timeline-description-list"]}>
+                {step.description.map((desc, i) => (
+                  <li key={i} className={styles["timeline-description-item"]}>
+                    {desc}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className={styles["timeline-description"]}>
+                {step.description}
+              </p>
+            )}
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
+export default Timeline;
+
+
+.timeline-container {
+  max-width: 600px;
+  margin: 40px auto;
+  font-family: sans-serif;
+}
+
+.timeline-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  min-height: 48px;
+  margin-bottom: 32px;
+}
+
+.timeline-item.last {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #1976d2;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+  border: 2px solid #1976d2;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0; // Prevent shrinking/stretching
+}
+
+.timeline-item.completed .timeline-dot {
+  background: #1976d2;
+}
+
+.timeline-content {
+  margin-left: 16px;
+}
+
+.timeline-label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.timeline-date {
+  color: #757575;
+  font-size: 14px;
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  left: 13px;
+  top: 32px;
+  width: 2px;
+  height: calc(100% - 32px);
+  background: #e0e0e0;
+  z-index: 0;
+}
+
+.timeline-item.completed::after {
+  background: #1976d2;
+}
+
+.timeline-description-list {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+  color: #424242;
+  font-size: 14px;
+}
+
+.timeline-description-item {
+  margin-bottom: 4px;
+  //remove dot from list item
+  list-style-type: none;
+}
+

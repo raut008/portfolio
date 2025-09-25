@@ -1,0 +1,38 @@
+// Central color tokens for the project
+
+// Base palette
+$color-accent: #2b6cb0;
+$color-primary: $color-accent;
+$color-text: #1a202c;
+$color-muted: #718096;
+$color-secondary: #4a5568;
+$color-bg: #ffffff;
+$color-border: rgba(43, 108, 176, 0.12);
+$color-dot-shadow: rgba(43, 108, 176, 0.06);
+$color-success: #48bb78;
+$color-danger: #f56565;
+
+// Semantic aliases (optional convenience)
+$accent: $color-accent;
+$text: $color-text;
+$muted: $color-muted;
+$border: $color-border;
+$dot-shadow: $color-dot-shadow;
+
+// Color map + helper (if you prefer function access)
+$colors: (
+  "accent": $color-accent,
+  "text": $color-text,
+  "muted": $color-muted,
+  "border": $color-border,
+  "dot-shadow": $color-dot-shadow,
+  "bg": $color-bg,
+  "primary": $color-primary,
+  "secondary": $color-secondary,
+  "success": $color-success,
+  "danger": $color-danger,
+);
+
+@function color($k) {
+  @return map-get($colors, $k);
+}

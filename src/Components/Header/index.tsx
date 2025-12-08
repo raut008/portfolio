@@ -2,16 +2,16 @@ import { Icon } from "../Icons";
 import styles from "./index.module.scss";
 
 const Header = () => {
-  const handleMenuClick = () => {
-    alert("Menu clicked!");
-  };
+  // const handleMenuClick = () => {
+  //   alert("Menu clicked!");
+  // };
 
   return (
     <div className={styles["header"]}>
       <div className={styles["header__title"]}>Anand Codes</div>
-      <div className={styles["header__menu"]} onClick={handleMenuClick}>
+      {/* <div className={styles["header__menu"]} onClick={handleMenuClick}>
         <Icon type="menu" />
-      </div>
+      </div> */}
       <div className={styles["header__nav"]}>
         <a href="#about-me" className={styles["header__nav-link"]}>
           About Me

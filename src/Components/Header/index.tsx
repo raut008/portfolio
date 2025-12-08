@@ -1,4 +1,4 @@
-import { Icon } from "../Icons";
+// import { Icon } from "../Icons";
 import styles from "./index.module.scss";
 
 const Header = () => {

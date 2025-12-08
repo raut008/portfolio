@@ -1,4 +1,4 @@
-@import "../../Styles/Mixins.scss";
+@use "../../Styles/Mixins" as *;
 
 .face-direction {
   display: none;

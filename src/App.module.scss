@@ -1,4 +1,4 @@
-@import "./Styles/Mixins.scss";
+@use "./Styles/Mixins" as *;
 
 .app {
   padding: 2rem;

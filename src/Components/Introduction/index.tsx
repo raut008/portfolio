@@ -24,8 +24,8 @@ const Introduction = () => {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/AnandRaut.pdf"; // <-- place your PDF in public/ folder
-    link.download = "/AnandRaut.pdf";
+    link.href = "/AnandRaut.pdf";
+    link.download = "/Anand_Raut_Resume.pdf";
     link.click();
   };
 

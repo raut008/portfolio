@@ -1,4 +1,4 @@
-@import "../../Styles/Mixins.scss";
+@use "../../Styles/Mixins" as *;
 
 .about-me {
   &__heading {

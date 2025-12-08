@@ -21,23 +21,23 @@ const defaultProjects: Project[] = [
     title: "Movie Chat Bot",
     description:
       "A conversational movie assistant built with Next.js, Perplexity AI API, and MongoDB Vertex Search.",
-    githubUrl: "https://github.com/your-username/movie-chat-bot",
-    demoUrl: "https://movie-chat-bot.vercel.app",
+    githubUrl: "https://github.com/raut008/llm-chatbot",
+    demoUrl: "https://popcorngo.theraut.com/",
     tech: ["Next.js", "Perplexity AI", "MongoDB", "TypeScript"],
   },
   {
     title: "TicTacToe Game",
     description:
-      "Classic TicTacToe game implemented in React with responsive UI and two-player mode.",
-    githubUrl: "https://github.com/your-username/react-tictactoe",
-    demoUrl: "https://your-username.github.io/react-tictactoe",
+      "Classic TicTacToe game implemented in React with two-player mode and AI mode.",
+    githubUrl: "https://github.com/raut008/tictactoe",
+    demoUrl: "https://tictactoe.anand.theraut.com/",
     tech: ["React", "TypeScript", "CSS"],
   },
   {
     title: "Portfolio Site",
     description: "Personal portfolio built with React + Vite.",
-    githubUrl: "https://github.com/your-username/portfolio",
-    demoUrl: "https://your-username.github.io/portfolio",
+    githubUrl: "https://github.com/raut008/portfolio",
+    demoUrl: "https://portfolio.anand.theraut.com/",
     tech: ["React", "Vite", "SCSS"],
   },
 ];

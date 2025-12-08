@@ -57,7 +57,7 @@ const FaceDirection = () => {
       >
         <img
           // src={`/src/assets/${img}`}
-          src={`/src/assets/${FRONT_IMG}`}
+          src={`/${FRONT_IMG}`}
           alt={img}
           className={styles["face-direction__img"]}
         />

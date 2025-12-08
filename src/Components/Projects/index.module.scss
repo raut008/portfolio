@@ -34,6 +34,7 @@ $shadow-hover: 0 22px 60px rgba(10, 10, 10, 0.16);
   }
 
   &__item {
+    position: relative;
     background: c.$color-bg;
     border: 1px solid c.$color-border;
     border-radius: 8px;
@@ -96,6 +97,10 @@ $shadow-hover: 0 22px 60px rgba(10, 10, 10, 0.16);
   }
 
   &__links {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+
     display: flex;
     gap: 0.5rem;
   }

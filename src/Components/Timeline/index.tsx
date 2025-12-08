@@ -60,17 +60,22 @@ const TimelineItem: FC<{ step: TimelineStep; index: number }> = ({ step }) => {
             ))}
           </ul>
         ) : (
-          <p className={styles["timeline__description-text"]}>{step.description}</p>
+          <p className={styles["timeline__description-text"]}>
+            {step.description}
+          </p>
         )}
       </div>
     </li>
   );
 };
 
-const Timeline: FC<TimelineProps> = ({ steps = defaultTimelineSteps, ariaLabel = "Work timeline" }) => {
+const Timeline: FC<TimelineProps> = ({
+  steps = defaultTimelineSteps,
+  ariaLabel = "Work timeline",
+}) => {
   return (
     <section id="experience" className={styles.timeline} aria-label={ariaLabel}>
-      <h2 className={styles["timeline__heading"]}>Timeline.</h2>
+      <h2 className={styles["timeline__heading"]}>Experience.</h2>
       <ol className={styles["timeline__list"]}>
         {steps.map((step, idx) => (
           <TimelineItem key={`${step.label}-${idx}`} step={step} index={idx} />

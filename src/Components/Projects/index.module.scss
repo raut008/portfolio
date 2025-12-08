@@ -1,21 +1,20 @@
 @use "../../Styles/colors" as c;
 @use "../../Styles/Mixins" as m;
 
-/* tokens */
 $pad: m.space(md);
 $gap: m.space(md);
-$min-card-height: 220px;
+$card-height: 360px;
+
 $shadow-base: 0 6px 18px rgba(10, 10, 10, 0.06);
 $shadow-hover: 0 22px 60px rgba(10, 10, 10, 0.16);
 
-/* Block: .card (simplified) */
 .card {
   padding: $pad;
   max-width: 1100px;
   margin: 0 auto;
 
   &__heading {
-    margin: 0 0 m.space(md);
+    margin-bottom: m.space(md);
     font-size: m.font-size(xl);
     color: c.$color-text;
     font-weight: 700;
@@ -24,8 +23,6 @@ $shadow-hover: 0 22px 60px rgba(10, 10, 10, 0.16);
   &__list {
     display: grid;
     gap: $gap;
-    align-items: start; /* prevents row reflow on hover */
-    grid-auto-rows: 1fr; /* keeps rows consistent */
     grid-template-columns: 1fr;
 
     @include m.respond-to(tablet) {
@@ -40,33 +37,25 @@ $shadow-hover: 0 22px 60px rgba(10, 10, 10, 0.16);
     background: c.$color-bg;
     border: 1px solid c.$color-border;
     border-radius: 8px;
-    overflow: visible; /* show shadow */
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    min-height: $min-card-height;
-    align-self: start;
+    height: $card-height;
 
-    /* performance + smooth animation */
-    transform: translateZ(0);
-    will-change: transform, box-shadow;
-    transition: transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
     box-shadow: $shadow-base;
-    position: relative;
+    transition: transform 240ms, box-shadow 240ms;
 
-    &:hover,
-    &:focus-within {
+    &:hover {
       box-shadow: $shadow-hover;
-      z-index: 10;
     }
   }
 
-  /* media / body / content */
   &__media {
     background-color: c.$color-accent;
     background-size: cover;
     background-position: center;
-    height: 140px;
-    flex: 0 0 140px;
+    height: 40%;
+    min-height: 120px;
   }
 
   &__body {
@@ -79,31 +68,28 @@ $shadow-hover: 0 22px 60px rgba(10, 10, 10, 0.16);
 
   &__title {
     margin: 0;
-    color: c.$color-text;
     font-size: m.font-size(base);
     font-weight: 600;
   }
 
   &__desc {
-    margin: 0;
-    color: c.$color-text;
     font-size: m.font-size(sm);
     line-height: 1.4;
-    flex: 1;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   &__tech {
     display: flex;
     gap: 0.4rem;
     flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
-    list-style: none;
   }
 
-  &__tech-item {
+  &__techItem {
     background: rgba(0, 0, 0, 0.04);
-    color: c.$color-text;
     font-size: 0.75rem;
     padding: 0.25rem 0.5rem;
     border-radius: 999px;
@@ -112,20 +98,17 @@ $shadow-hover: 0 22px 60px rgba(10, 10, 10, 0.16);
   &__links {
     display: flex;
     gap: 0.5rem;
-    align-items: center;
   }
 
   &__link {
     color: c.$color-accent;
-    text-decoration: none;
     font-weight: 600;
-    padding: 0.4rem 0.6rem;
-    border-radius: 6px;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 8px;
 
-    &:hover,
-    &:focus {
+    &:hover {
       background: rgba(43, 108, 176, 0.06);
-      outline: none;
     }
   }
 }

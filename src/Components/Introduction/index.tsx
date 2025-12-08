@@ -3,6 +3,24 @@ import { Icon } from "../Icons";
 import styles from "./index.module.scss";
 
 const Introduction = () => {
+  const handleLinkedIn = () => {
+    window.open("https://www.linkedin.com/in/anand-raut-1212761b2/", "_blank");
+  };
+
+  const handleGitHub = () => {
+    window.open("https://github.com/raut008", "_blank");
+  };
+
+  const handleGmail = () => {
+    const subject = encodeURIComponent("Let's Connect!");
+    const body = encodeURIComponent(
+      "Hi, I'd love to connect with you to build a website or collaborate on something exciting!"
+    );
+    window.open(
+      `https://mail.google.com/mail/?view=cm&fs=1&to=anandrautwebdev@gmail.com&su=${subject}&body=${body}`,
+      "_blank"
+    );
+  };
   return (
     <section className={styles.introduction} aria-label="Introduction">
       <div className={styles["introduction__content"]}>
@@ -21,9 +39,9 @@ const Introduction = () => {
 
         <div className={styles["introduction__cta"]}>
           <button className={styles["introduction__cta-button"]}>Resume</button>
-          <Icon type="linkedin" />
-          <Icon type="gmail" />
-          <Icon type="github" />
+          <Icon type="linkedin" onClick={handleLinkedIn} />
+          <Icon type="gmail" onClick={handleGmail} />
+          <Icon type="github" onClick={handleGitHub} />
         </div>
       </div>
 

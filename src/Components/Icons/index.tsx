@@ -1,7 +1,8 @@
 import React, { type JSX } from "react";
 import styles from "./index.module.scss";
 interface IconProps {
-  type: string; // can be anything
+  type: string;
+  onClick?: () => void;
 }
 
 const ICONS: Record<string, JSX.Element> = {
@@ -79,8 +80,12 @@ const ICONS: Record<string, JSX.Element> = {
     </svg>
   ),
 };
-export const Icon: React.FC<IconProps> = ({ type }) => {
+export const Icon: React.FC<IconProps> = ({ type, onClick = () => {} }) => {
   const icon = ICONS[type];
 
-  return <div className={styles.icon}>{icon}</div>;
+  return (
+    <div className={styles.icon} onClick={onClick}>
+      {icon}
+    </div>
+  );
 };

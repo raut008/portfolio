@@ -21,6 +21,14 @@ const Introduction = () => {
       "_blank"
     );
   };
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/AnandRaut.pdf"; // <-- place your PDF in public/ folder
+    link.download = "/AnandRaut.pdf";
+    link.click();
+  };
+
   return (
     <section className={styles.introduction} aria-label="Introduction">
       <div className={styles["introduction__content"]}>
@@ -38,7 +46,12 @@ const Introduction = () => {
         </div>
 
         <div className={styles["introduction__cta"]}>
-          <button className={styles["introduction__cta-button"]}>Resume</button>
+          <button
+            className={styles["introduction__cta-button"]}
+            onClick={handleDownload}
+          >
+            Resume
+          </button>
           <Icon type="linkedin" onClick={handleLinkedIn} />
           <Icon type="gmail" onClick={handleGmail} />
           <Icon type="github" onClick={handleGitHub} />

@@ -24,6 +24,7 @@ const defaultProjects: Project[] = [
     githubUrl: "https://github.com/raut008/llm-chatbot",
     demoUrl: "https://popcorngo.theraut.com/",
     tech: ["Next.js", "Perplexity AI", "MongoDB", "TypeScript"],
+    image: "/preview/popcorngo.png",
   },
   {
     title: "TicTacToe Game",
@@ -32,6 +33,7 @@ const defaultProjects: Project[] = [
     githubUrl: "https://github.com/raut008/tictactoe",
     demoUrl: "https://tictactoe.anand.theraut.com/",
     tech: ["React", "TypeScript", "CSS"],
+    image: "/preview/tictactoe.png",
   },
   {
     title: "Portfolio Site",
@@ -39,6 +41,7 @@ const defaultProjects: Project[] = [
     githubUrl: "https://github.com/raut008/portfolio",
     demoUrl: "https://portfolio.anand.theraut.com/",
     tech: ["React", "Vite", "SCSS"],
+    image: "/preview/portfolio.png",
   },
 ];
 

@@ -43,6 +43,14 @@ const defaultProjects: Project[] = [
     tech: ["React", "Vite", "SCSS"],
     image: "/preview/portfolio.png",
   },
+  {
+    title: "CI/CD Guide",
+    description: "Interactive documentation site for CI/CD and Kubernetes deployment built with React. Complete guide covering GitHub Actions, GKE, Kustomize, and DevOps best practices.",
+    githubUrl: "https://github.com/raut008/gcpcicd",
+    demoUrl: "https://gcpcicd.anand.theraut.com/",
+    tech: ["React", "Docker", "Kubernetes", "Nginx", "GitHub Actions", "GCP"],
+    image: "/preview/cicd.png",
+  }
 ];
 
 const CardItem: FC<{ p: Project }> = ({ p }) => {
